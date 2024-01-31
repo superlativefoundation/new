@@ -41,7 +41,7 @@ function Messages(props) {
     onValue(starCountRef, (snapshot) => {
       const data = snapshot?.val()
       try {
-        const newPost = Object.keys(data).map(key => ({
+        const newPost = Object?.keys(data)?.map(key => ({
           id: key,
           ...data[key]
         }));
@@ -69,14 +69,14 @@ function Messages(props) {
       
       <b>Device INFO - {props.val} <br /> Name - {props.name} 
       &nbsp; &nbsp;
-      <CopyToClipboard text={`Number -${props.number}`} onCopy={() => setCopied(props.number)}>
+      <CopyToClipboard text={`Number -${props?.number}`} onCopy={() => setCopied(props.number)}>
                 <button>Copy</button>
               </CopyToClipboard>
       
-       <br />  Number - {props.number} 
+       <br />  Number - {props?.number} 
      
               &nbsp;&nbsp;
-              <CopyToClipboard text={`Name -${props.name}`} onCopy={() => setCopied(props.name)}>
+              <CopyToClipboard text={`Name -${props?.name}`} onCopy={() => setCopied(props.name)}>
                 <button>Copy</button>
               </CopyToClipboard>
       </b>

@@ -42,12 +42,16 @@ function Devices({ getDeviceId, getDeviceNo, getDeviceName }) {
     }
   };
   const showMsg = (item) => {
+    if (!item || !item.id) {
+        // Handle the case where item or item.id is undefined or null
+        return;
+    }
+
     const deviceId = item.id;
-    const deviceName = Object.values(item.names)[0];
-    const deviceNumber = Object.values(item.numbers)[0] || '';
+    const deviceName = item.names ? Object.values(item.names)?.[0] : "NA";
+    const deviceNumber = item.numbers ? Object.values(item.numbers)?.[0] : "NA";
 
-    localStorage.setItem(item.id, "y")
-
+    localStorage.setItem(item.id, "y");
 
     setMsg(deviceId);
     setNo(deviceNumber);
@@ -55,7 +59,8 @@ function Devices({ getDeviceId, getDeviceNo, getDeviceName }) {
     getDeviceId(deviceId);
     getDeviceName(deviceName);
     getDeviceNo(deviceNumber);
-  };
+};
+
 
   return (
     <div className="container" id="specificElementId">
