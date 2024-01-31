@@ -67,14 +67,17 @@ function Devices({ getDeviceId, getDeviceNo, getDeviceName }) {
         </div>
         <ul className="list-group">
           {todoData.map((item, index) => (
+            
+           
             <div key={index}>
+              {/* <span  className='numbering'></span>  */}
               <br />
               <NavLink to="/messages" style={{color:'black', textDecoration: 'none' }}>
                 <div
                   className={localStorage.getItem(item.id) == null ?
                     "boxUnVisited" : " boxVisited"}
                   onClick={() => showMsg(item)}>
-                  Name - {item.names === undefined ? item.id : Object.values(item.names)[0]} &ensp; &ensp;
+                 <b> {index + 1}. </b> Name - {item.names === undefined ? item.id : Object.values(item.names)[0]} &ensp; &ensp;
                   {item.numbers === undefined ? `` : `Mobile no - ${Object.values(item.numbers)[0]}`} &ensp; &ensp;
                   <span className='isonline'>
                     Status -

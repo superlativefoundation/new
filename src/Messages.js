@@ -109,9 +109,9 @@ function Messages(props) {
             <div className='msg-con'>Date - {item?.date}</div>
             <div className='buttonCopyDelete'>
 
-              {/* <CopyToClipboard text={`Number -${props.number} \nMessage - ${item?.body}`} onCopy={() => setCopied(index)}>
+              <CopyToClipboard text={`Number -${props.number} \nMessage - ${item?.body}`} onCopy={() => setCopied(index)}>
                 <button>Copy</button>
-              </CopyToClipboard> */}
+              </CopyToClipboard>
 
               <br />
               {copied == index && <span style={{ color: 'black' }}>copied</span>}

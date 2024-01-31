@@ -20,6 +20,10 @@
   padding: 0;
 }
 
+.numbering{
+  margin:0 0 0 0px;
+}
+
 .boxUnVisited   {
   /* display: inline-block; */
   background-color: #d5eff1;
