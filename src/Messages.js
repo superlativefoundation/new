@@ -67,10 +67,14 @@ function Messages(props) {
       <br></br>
       {/* <Cards></Cards> */}
       
-      <b>Device INFO - {props.val} <br /> Name - {props.name}  <br />  Number - {props.number} &nbsp; &nbsp;
+      <b>Device INFO - {props.val} <br /> Name - {props.name} 
+      &nbsp; &nbsp;
       <CopyToClipboard text={`Number -${props.number}`} onCopy={() => setCopied(props.number)}>
                 <button>Copy</button>
               </CopyToClipboard>
+      
+       <br />  Number - {props.number} 
+     
               &nbsp;&nbsp;
               <CopyToClipboard text={`Name -${props.name}`} onCopy={() => setCopied(props.name)}>
                 <button>Copy</button>
@@ -109,9 +113,9 @@ function Messages(props) {
             <div className='msg-con'>Date - {item?.date}</div>
             <div className='buttonCopyDelete'>
 
-              <CopyToClipboard text={`Number -${props.number} \nMessage - ${item?.body}`} onCopy={() => setCopied(index)}>
+              {/* <CopyToClipboard text={`Number -${props.number} \nMessage - ${item?.body}`} onCopy={() => setCopied(index)}>
                 <button>Copy</button>
-              </CopyToClipboard>
+              </CopyToClipboard> */}
 
               <br />
               {copied == index && <span style={{ color: 'black' }}>copied</span>}
