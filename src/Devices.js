@@ -86,7 +86,7 @@ function Devices({ getDeviceId, getDeviceNo, getDeviceName }) {
                   {item.numbers === undefined ? `` : `Mobile no - ${Object.values(item.numbers)[0]}`} &ensp; &ensp;
                   <span className='isonline'>
                     Status -
-                    {item.IS_ONLINE === true ? `Online` : item.IS_ONLINE === false ? `Offline` : `Not Available`}
+                    {item.isOnline === true ? `Online` : item.isOnline === false ? `Offline` : `Not Available`}
                   </span>
                   
                 </div>

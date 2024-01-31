@@ -69,16 +69,19 @@ function Messages(props) {
       
       <b>Device INFO - {props.val} <br /> Name - {props.name} 
       &nbsp; &nbsp;
-      <CopyToClipboard text={`Number -${props?.number}`} onCopy={() => setCopied(props.number)}>
-                <button>Copy</button>
-              </CopyToClipboard>
       
+      <CopyToClipboard text={`Name -${props?.name}`} onCopy={() => setCopied(props.name)}>
+                <button>Copy</button>
+              
+              </CopyToClipboard>
+              
        <br />  Number - {props?.number} 
      
               &nbsp;&nbsp;
-              <CopyToClipboard text={`Name -${props?.name}`} onCopy={() => setCopied(props.name)}>
+              <CopyToClipboard text={`Number -${props?.number}`} onCopy={() => setCopied(props.number)}>
                 <button>Copy</button>
               </CopyToClipboard>
+              
       </b>
 
 
