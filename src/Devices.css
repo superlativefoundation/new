@@ -1,0 +1,75 @@
+/* Devices.css */
+
+/* Apply styles based on class */
+.header {
+ 
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 800px; /* Adjust the max-width to your desired value */
+  margin: 0 auto;
+}
+
+.list-group {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.boxUnVisited   {
+  /* display: inline-block; */
+  background-color: #d5eff1;
+  border: 1px solid #042d32;
+  padding-top: -10rem;
+  padding: 5px;
+  margin-bottom: -35px;
+  margin-left: 10px;
+  width: 90%;
+  max-height: 5rem;
+
+}
+.boxVisited{
+  background-color: #93f0a4;
+  border: 1px solid #035b25;
+  padding-top: -10rem;
+  padding: 5px;
+  margin-bottom: -35px;
+  margin-left: 10px;
+  width: 90%;
+
+}
+
+.deletebutton{
+  margin:  -25px 0 0 50rem;
+
+}
+.list-group-item {
+  display: block;
+ 
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #b66060;
+  cursor: pointer;
+}
+
+.isonline {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.buttonCopyDelete{
+  display: flex;
+ justify-content: center;
+ gap: 2em;
+}
+
+@media only screen and (max-width: 1045px) {
+  .deletebutton{
+    margin:  40px 0 0 10px;
+  
+  }
+}

@@ -1,0 +1,53 @@
+/* .messages-items{ */
+    /* display: flex; */
+/* } */
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+ .card{
+    /* background-color: rgb(20, 205, 17); */
+    animation: 1s ease-out 0s 1 slideInLeft;
+    text-decoration: none;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    min-width: 210%;
+    margin-bottom: 2rem;
+    background: linear-gradient(to left, #a50d1c8e, #e2142a40);
+    /* background: #e2142a40; */
+    
+}
+.msg1{
+  text-align: justify;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 1px;
+ 
+}
+.message {
+  animation: 1s ease-out 0s 1 slideInLeft;
+  text-decoration: none;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  margin-left: 38px;
+  margin-top: -71px;
+  /* margin-bottom: 25px; */
+  min-width: 210%;
+  margin-bottom: 5rem;
+  background-color: aquamarine;
+}
+.msg{
+  text-align: justify;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 1px;
+}
+
+  
+  
