@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { db } from './config';
 import { ref, onValue, DataSnapshot, remove } from 'firebase/database';
+import notificationSound from './notification.mp3';
 
-import Messages from './Messages';
-import Cards from './Cards';
+
+// import Messages from './Messages';
+// import Cards from './Cards';
 import './Devices.css'; // Import your external CSS file.
 import { NavLink } from 'react-router-dom';
 
@@ -13,8 +15,15 @@ function Devices({ getDeviceId, getDeviceNo, getDeviceName }) {
   const [todoData, setTodoData] = useState([]);
   const [msg, setMsg] = useState();
   const [no, setNo] = useState();
+  
 
   useEffect(() => {
+
+    const playNotificationSound = () => {
+      const audio = new Audio(notificationSound);
+      audio.play();
+    };
+
     const starCountRef = ref(db, 'Devices');
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
@@ -22,12 +31,32 @@ function Devices({ getDeviceId, getDeviceNo, getDeviceName }) {
         id: key,
         ...data[key]
       }));
+     
+     
+      
+
+      const devicesSeenData = localStorage.getItem('devicesSeen');
+  const deviceSeen = devicesSeenData ? JSON.parse(devicesSeenData) : [];
+       
+      if (newPost.filter(d => !deviceSeen.includes(d.id)).length > 0) {
+        // New device(s) added!
+        const newDeviceIds = newPost.map(d => d.id);
+        localStorage.setItem('devicesSeen', JSON.stringify(newDeviceIds));
+          
+        playNotificationSound();
+
+        // alert('A new device has been added to the list.');
+      }
 
       newPost.sort((a, b) => b.INSTALLED_TIME - a.INSTALLED_TIME || 0);
+
+     
+
+
       setTodoData(newPost);
     });
   }, []);
-
+  
   const handleDeleteMessage = (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete ?");
     if (confirmDelete) {
